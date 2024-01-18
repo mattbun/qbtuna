@@ -2,6 +2,11 @@
 
 My own quick-and-dirty script to update qbittorrent's listen port with the current port-forwarded port from gluetun.
 
+## Features
+
+* Uses gluetun's control server, not the deprecated `forwarded_port` file
+* No dependencies!
+
 ## Configuration
 
 Use the following environment variables to configure it:
