@@ -11,3 +11,22 @@ Use the following environment variables to configure it:
 * `QBITTORRENT_USERNAME` - The username to log into qbittorrent with
 * `QBITTORRENT_PASSWORD` - The password to log into qbittorrent with
 * `INTERVAL_S` - The update interval, in seconds (defaults to 60 if unset)
+
+## Running it
+
+You can download one of the [releases](https://github.com/mattbun/qbtuna/releases) or it's available as a docker image at [`ghcr.io/mattbun/qbtuna`](https://github.com/mattbun/qbtuna/pkgs/container/qbtuna).
+
+Example `docker-compose.yml`:
+
+```yaml
+services:
+  qbtuna:
+    container_name: qbtuna
+    image: ghcr.io/mattbun/qbtuna
+    environment:
+      - INTERVAL_S=60
+      - GLUETUN_HOST=http://gluetun:8000
+      - QBITTORRENT_HOST=http://qbittorrent:8080
+      - QBITTORRENT_USERNAME
+      - QBITTORRENT_PASSWORD
+```
